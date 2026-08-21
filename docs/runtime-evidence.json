@@ -1,0 +1,18 @@
+{
+  "dumpConfig": {
+    "verified": true,
+    "evidence": "Disposable rc.1 and rc.2 Web dumps each contained exactly one dsh-settings-hub row before runtime startup and no row after official-CLI uninstall."
+  },
+  "isolatedRuntime": {
+    "verified": true,
+    "evidence": "Disposable rc.1 and rc.2 Web Profiles started on random loopback ports; Settings Hub, line icons, selection persistence, quick-open, and zero browser errors were observed."
+  },
+  "realProfile": {
+    "verified": false,
+    "evidence": "Real Profile was intentionally unchanged."
+  },
+  "externalReadback": {
+    "verified": false,
+    "evidence": "No GitHub release, Registry merge, or public marketplace readback exists."
+  }
+}
