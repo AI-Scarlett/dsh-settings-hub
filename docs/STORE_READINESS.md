@@ -14,9 +14,10 @@
 - Icon assets: 14 embedded line SVG definitions; no remote fonts, images, stylesheets, or scripts.
 - Browser state: at most 64 favorites and 128 icon assignments in 32 KiB of validated localStorage JSON.
 - Compatibility target: DSH `0.1.1-rc.1` and `0.1.1-rc.2`, Web Profile.
-- Current immutable public Commit: unavailable until GitHub publication.
+- Current immutable local source Commit: `5a19faa0d1b6c94e8192c076de471a982c8a312c`.
+- Immutable public Commit: unavailable until the same object is published and read back from GitHub.
 - General audit: static `77/80`, no blocker before the immutable source commit; runtime evidence `10/20`.
-- Marketplace audit: not run.
+- Marketplace candidate: `marketplace/catalog-entry.draft.json`, pinned to the immutable local source Commit.
 - Disposable Profile E3: passed on DSH `0.1.1-rc.1` and `0.1.1-rc.2`; see `docs/RUNTIME_EVIDENCE.md`.
 - Registry PR：未提交。
 - Merged catalog: not merged.

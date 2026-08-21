@@ -1,0 +1,92 @@
+{
+  "id": "dsh-settings-hub",
+  "name": "DSH 设置导航中心",
+  "packageName": "dsh-settings-hub",
+  "description": "安全地搜索、分组和打开 DSH 设置页面，并为设置与插件页面配置内置线性图标。",
+  "repositoryUrl": "https://github.com/AI-Scarlett/dsh-settings-hub",
+  "defaultBranch": "main",
+  "manifestPath": "package.json",
+  "commit": "5a19faa0d1b6c94e8192c076de471a982c8a312c",
+  "version": "0.1.0",
+  "categories": [
+    "ui",
+    "management"
+  ],
+  "featured": false,
+  "assurance": {
+    "discovery": {
+      "status": "unknown",
+      "summary": "本地不可变提交已建立；等待 GitHub 固定提交公开后才能验证 HTTPS 来源。"
+    },
+    "installability": {
+      "status": "unknown",
+      "summary": "rc.1 与 rc.2 一次性 Profile 安装、配置合成和卸载已通过；尚无公开固定源证据。"
+    },
+    "runtime": {
+      "status": "unknown",
+      "summary": "rc.1 与 rc.2 一次性 Web Profile 的设置中心、图标配置和快捷打开已通过；尚无公开固定源证据。"
+    },
+    "securityReview": {
+      "status": "unknown",
+      "summary": "9 项源码与契约测试及通用静态审计通过，不等同于独立安全审查。"
+    }
+  },
+  "entryIds": [
+    "dsh-settings-hub"
+  ],
+  "status": "approved",
+  "compatibility": {
+    "dsh": "0.1.1-rc.1 || 0.1.1-rc.2",
+    "dshReleases": {
+      "0.1.1-rc.1": "compatible",
+      "0.1.1-rc.2": "compatible"
+    },
+    "dshOperations": {
+      "0.1.1-rc.1": {
+        "install": "passed",
+        "start": "passed",
+        "uninstall": "passed",
+        "rollback": "unknown"
+      },
+      "0.1.1-rc.2": {
+        "install": "passed",
+        "start": "passed",
+        "uninstall": "passed",
+        "rollback": "unknown"
+      }
+    },
+    "node": ">=22.13.0",
+    "systems": [
+      "macOS"
+    ],
+    "profiles": [
+      "web"
+    ]
+  },
+  "updatePolicy": "source-verified",
+  "details": {
+    "pluginType": "client",
+    "installSource": "github",
+    "license": "MIT",
+    "permissions": {
+      "level": "low",
+      "files": "none",
+      "network": "none",
+      "commands": "none",
+      "credentials": [
+        "none"
+      ]
+    },
+    "externalDependencies": [],
+    "reviewStatus": "author-verified"
+  },
+  "risk": {
+    "installScripts": [],
+    "review": "owner-curated-not-security-audited"
+  },
+  "source": {
+    "updatedAt": "2026-08-21T14:57:10.000Z",
+    "observedAt": "2026-08-21T14:59:17.000Z",
+    "provenance": "local-git-commit-awaiting-public-readback"
+  }
+}
