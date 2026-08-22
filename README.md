@@ -50,14 +50,15 @@ npm pack --dry-run --json
 
 ## 安装与发布状态
 
-当前插件版本为 `0.2.0`。通过 GitHub 安装时建议固定完整 40 位 Commit；发布回读报告会给出本版本的准确 Commit：
+当前插件版本为 `0.2.0`。通过 GitHub 安装时建议固定已公开回读的完整 40 位 Commit：
 
 ```text
-github:AI-Scarlett/dsh-settings-hub#<40-character-commit>
+github:AI-Scarlett/dsh-settings-hub#2771a315d4c438b89b8323635038642ab03cabf3
 ```
 
 - `0.2.0` 源码：检查及一次性 Profile E3 已通过；
-- GitHub `main` / `v0.2.0`：以公开仓库回读为准；
+- GitHub 固定源码：`2771a315d4c438b89b8323635038642ab03cabf3` 的 manifest、Bundle Patch 与 Client 已公开回读；
+- GitHub 标签：`v0.2.0` 指向上述源码 Commit；
 - DSH STORE：已存在旧版目录身份；目录固定 Commit 与公开页面更新属于独立发布门；
 - 真实 Profile：未安装。
 

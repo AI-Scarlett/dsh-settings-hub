@@ -12,7 +12,7 @@
     "evidence": "Real Profile was intentionally unchanged."
   },
   "externalReadback": {
-    "verified": false,
-    "evidence": "No GitHub release, Registry merge, or public marketplace readback exists."
+    "verified": true,
+    "evidence": "2026-08-22 public GitHub Commit 2771a315d4c438b89b8323635038642ab03cabf3 exposed dsh-settings-hub@0.2.0; public Bundle Patch and Client SHA-256 values matched the local Commit. Registry and marketplace refresh remain unverified."
   }
 }

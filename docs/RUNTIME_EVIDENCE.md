@@ -12,7 +12,8 @@
 - Removal acceptance: assigning `插件配置` back to `Tab：默认分组` removed it from the custom Tab and showed the empty-Tab guidance.
 - Browser error log: zero errors.
 - Cleanup: the server stopped; official `dsh plugin --profile web remove dsh-settings-hub` completed; a fresh dump contained zero plugin rows; the disposable home was deleted.
-- Scope: this is current E3 evidence for the `0.2.0` source prepared for repository release. It does not by itself prove a GitHub Commit, catalog update, public marketplace, or real Profile installation.
+- Public source readback: GitHub Commit `2771a315d4c438b89b8323635038642ab03cabf3` exposed `dsh-settings-hub@0.2.0`; the public Bundle Patch and Client SHA-256 values matched the local Commit exactly.
+- Scope: E3 is current for the `0.2.0` release source and its fixed GitHub source surface is verified. This does not prove a Registry update, refreshed marketplace page, or real Profile installation.
 
 Observed on 2026-08-21 in two new `/tmp` homes. No command used the real DSH
 home, no API key was entered, telemetry was disabled, and both temporary Web
