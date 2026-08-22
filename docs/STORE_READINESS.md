@@ -15,7 +15,7 @@
 - Browser state: at most 12 custom tabs, 128 tab assignments, 64 favorites, and 128 icon assignments in 32 KiB of validated localStorage JSON; writes occur only after explicit save.
 - Compatibility target: DSH `0.1.1-rc.1` and `0.1.1-rc.2`, Web Profile.
 - Prepared package version: `0.2.1`.
-- Immutable public source Commit: `a91a65e939ca2435f1973eb17f8f33f1ee8a737d`; public manifest, Bundle Patch, Client, three-platform CI, and a disposable official-CLI GitHub install/start/uninstall were verified.
+- Immutable public source Commit: `a91a65e939ca2435f1973eb17f8f33f1ee8a737d`; public manifest, Bundle Patch, Client, three-platform CI, and disposable official-CLI GitHub fresh-install plus `0.1.0` to `0.2.1` upgrade/start/uninstall were verified.
 - General audit: static `80/80`, runtime/public-source evidence `14/20`, total `94/100`, no blocker; this score does not prove a real Profile.
 - Marketplace candidate: `marketplace/catalog-entry.draft.json`, pinned to the immutable public source Commit.
 - Marketplace audit: `direct`, no blocker; Registry CI/merge and public marketplace refresh remain unverified.
