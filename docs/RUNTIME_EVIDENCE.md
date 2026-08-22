@@ -1,5 +1,19 @@
 # Disposable runtime evidence
 
+## 2026-08-22 multi-location layout source iteration
+
+- Runtime identity: global official CLI reported `0.1.1-rc.2`.
+- Source identity: clean local Commit `ee9bfd5c1fa9d8f18e4658a4501b8975cb9bf95f`, package `dsh-settings-hub@0.3.0`; public GitHub readback was not yet performed at this gate.
+- Isolation: a new `/tmp/dsh-settings-hub-v030-e3.*` DSH home was created; the real DSH home and Profile were not read or changed.
+- Install and composition: official `dsh plugin --profile web add <clean-worktree>` completed; `dsh --profile web --dump-config` contained exactly one `dsh-settings-hub` row.
+- Startup: `dsh web --no-open --port 0` served the disposable Web Profile on loopback and the browser loaded the app successfully.
+- Editor acceptance: `模型` changed to the built-in `shield` icon with immediate preview, moved to the first position, and was assigned simultaneously to the Settings Hub home, a new `常用插件` internal page, the plugin-owned DSH Plugins Tab, and the right-bottom dock.
+- Saved-view acceptance: after explicit save, the home reflected the new order/icon; the `常用插件` page contained only `模型`; the DSH Plugins section exposed `设置快捷方式` with `模型`; the frame exposed `展开设置快捷面板` and its panel contained `模型` plus the recovery link back to Settings Hub.
+- Persistence acceptance: after a full page reload, the right-bottom launcher reappeared from validated browser storage.
+- Browser error log: zero errors.
+- Cleanup: the server stopped; official `dsh plugin --profile web remove dsh-settings-hub` completed; a fresh dump contained zero plugin rows; the disposable home was moved to the user's Trash for recoverability.
+- Scope: local E3 is current for `0.3.0`. Fixed GitHub source, tag/CI, Registry update, public marketplace refresh, and real Profile installation remain separate gates.
+
 ## 2026-08-22 theme and layout-editor source iteration
 
 - Runtime identity: global official CLI reported `0.1.1-rc.2`.
