@@ -2,12 +2,12 @@
   "id": "dsh-settings-hub",
   "name": "DSH 设置导航中心（DSH Settings Hub）",
   "packageName": "dsh-settings-hub",
-  "description": "安全地搜索、分组和打开 DSH 设置页面，支持自定义 Tab、收藏和内置线性图标。",
+  "description": "安全地搜索、排序和打开 DSH 设置页面，支持多内页、插件页快捷 Tab、右下角面板、收藏和内置线性图标。",
   "repositoryUrl": "https://github.com/AI-Scarlett/dsh-settings-hub",
   "defaultBranch": "main",
   "manifestPath": "package.json",
-  "commit": "a91a65e939ca2435f1973eb17f8f33f1ee8a737d",
-  "version": "0.2.1",
+  "commit": "5ca01345b3570fa23381eec032d439b0eef73679",
+  "version": "0.3.0",
   "categories": [
     "ui",
     "management"
@@ -17,21 +17,21 @@
     "discovery": {
       "status": "verified",
       "method": "github-fixed-source-commit",
-      "checkedAt": "2026-08-22T13:08:32.000Z",
-      "evidenceUrl": "https://github.com/AI-Scarlett/dsh-settings-hub/commit/a91a65e939ca2435f1973eb17f8f33f1ee8a737d",
-      "summary": "公开固定提交的 manifest、Bundle Patch 与 Client 哈希匹配，且三平台 CI 通过。"
+      "checkedAt": "2026-08-22T15:12:22.000Z",
+      "evidenceUrl": "https://github.com/AI-Scarlett/dsh-settings-hub/commit/5ca01345b3570fa23381eec032d439b0eef73679",
+      "summary": "公开固定提交的 manifest、Bundle Patch 与 Client 哈希匹配，v0.3.0 标签解析正确，且三平台 CI 通过。"
     },
     "installability": {
       "status": "unknown",
-      "summary": "0.2.1 已在 rc.2 一次性 Profile 中完成安装、配置合成、冷启动和卸载；尚无独立公开运行证据。"
+      "summary": "0.3.0 已在 rc.2 一次性 Profile 中完成固定 GitHub 新装、从 0.2.1 升级、配置合成、冷启动和卸载；尚无独立公开运行证据。"
     },
     "runtime": {
       "status": "unknown",
-      "summary": "rc.2 一次性 Web Profile 已验证深浅色、编辑保存、自定义 Tab、图标、收藏和持久化；尚无真实 Profile 证据。"
+      "summary": "rc.2 一次性 Web Profile 已验证图标预览/保存、统一排序、多位置、内页、插件页 Tab、右下角面板、重载持久化和零浏览器错误；尚无真实 Profile 证据。"
     },
     "securityReview": {
       "status": "unknown",
-      "summary": "12 项源码与契约测试及通用静态审计通过，不等同于独立安全审查。"
+      "summary": "14 项源码与契约测试及通用静态审计通过，不等同于独立安全审查。"
     }
   },
   "entryIds": [
@@ -116,15 +116,19 @@
     "review": "owner-curated-not-security-audited"
   },
   "source": {
-    "updatedAt": "2026-08-22T13:06:50.000Z",
+    "updatedAt": "2026-08-22T15:06:05.000Z",
     "provenance": "github-commit",
-    "observedAt": "2026-08-22T13:08:32.000Z"
+    "observedAt": "2026-08-22T15:12:22.000Z"
   },
   "searchTerms": [
     "DSH 设置导航中心",
     "DSH Settings Hub",
     "dsh-settings-hub",
     "自定义 Tab",
+    "多位置",
+    "排序",
+    "右下角",
+    "快捷面板",
     "图标",
     "布局",
     "收藏",

@@ -4,6 +4,7 @@
 
 - Requested outcome: make a large DSH settings surface searchable and easier to navigate.
 - Target host: DeepSeek Harness Web `0.1.1-rc.1` and `0.1.1-rc.2`.
+- Compatibility declaration: Client peer ranges start at `0.1.1-rc.1`; rc.1 and rc.2 expose the three additive slots used by this plugin.
 - Public seams: `window.__ModuleLoader__.load`, `settings.section`, `settings.plugins.tab`, `shell.overlay`, `ctx.slots.entriesOfSlot`, `ctx.slots.subscribe`.
 - Bundle route: direct, repository root.
 - Risk: R1 because custom tabs, assignments, favorites, and icons are plugin-owned persistent browser state.

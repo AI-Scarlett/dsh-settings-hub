@@ -1,5 +1,15 @@
 # Disposable runtime evidence
 
+## 2026-08-22 rc.1 compatibility revision
+
+- Source identity: local `dsh-settings-hub@0.3.1`; this patch changes only the package version and three DSH Client peer lower bounds from rc.2 back to rc.1.
+- Toolchain isolation: a disposable DSH `0.1.1-rc.1` toolchain pinned `dsh`, `dsh-web-app`, `dsh-client-modules`, `dsh-client-runtime`, `dsh-client-ui-slots`, `dsh-client-ui-settings`, and `dsh-cordis-client-runner` to rc.1.
+- Contract recheck: the rc.1 public slot inventory contains `settings.section`, `settings.plugins.tab`, and `shell.overlay`, the exact three additive seats used by `0.3.x`.
+- Profile acceptance: the rc.1 official CLI installed local `0.3.1` into a new disposable Web Profile, resolved version `0.3.1`, composed exactly one row, and cold-started on loopback.
+- Browser acceptance: `设置中心` loaded; saving `模型` to the right-bottom location created one `展开设置快捷面板` launcher; the DSH Plugins section exposed one `设置快捷方式` Tab; browser error log contained zero errors.
+- Cleanup: official rc.1 CLI removal succeeded, a fresh dump contained zero rows, and the disposable toolchain/Profile were moved to Trash for recoverability.
+- Scope: this is local rc.1 E3 evidence. The `0.3.1` GitHub Commit/tag/CI, fixed-GitHub install and marketplace publication remain separate gates.
+
 ## 2026-08-22 multi-location layout source iteration
 
 - Runtime identity: global official CLI reported `0.1.1-rc.2`.
@@ -13,6 +23,16 @@
 - Browser error log: zero errors.
 - Cleanup: the server stopped; official `dsh plugin --profile web remove dsh-settings-hub` completed; a fresh dump contained zero plugin rows; the disposable home was moved to the user's Trash for recoverability.
 - Scope: local E3 is current for `0.3.0`. Fixed GitHub source, tag/CI, Registry update, public marketplace refresh, and real Profile installation remain separate gates.
+
+### Fixed public source follow-up
+
+- GitHub PR `#1` merged as `5ca01345b3570fa23381eec032d439b0eef73679`; tag `v0.3.0` peels to that Commit.
+- The public `package.json`, `cordis.patch.yml`, and `lib/client.js` SHA-256 values matched the merged local Commit exactly.
+- Main-branch CI run `32580676738` passed on Ubuntu, macOS, and Windows.
+- A new disposable rc.2 Web Profile installed the exact GitHub source and resolved `dsh-settings-hub@0.3.0` with one composed row.
+- A second disposable rc.2 Web Profile installed fixed `0.2.1`, upgraded through the official CLI to fixed `0.3.0`, retained one composed row, cold-started with HTTP 200, and served a Client SHA-256 matching the public source.
+- Both fixed-source Profiles were removed with the official CLI, fresh dumps contained zero rows, and the temporary homes were moved to Trash for recoverability.
+- Registry/catalog merge, public marketplace version visibility, and real Profile installation remained unverified at this source gate.
 
 ## 2026-08-22 theme and layout-editor source iteration
 

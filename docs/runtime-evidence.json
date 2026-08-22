@@ -1,11 +1,11 @@
 {
   "dumpConfig": {
     "verified": true,
-    "evidence": "2026-08-22 official CLI installed clean local Commit ee9bfd5c1fa9d8f18e4658a4501b8975cb9bf95f as dsh-settings-hub@0.3.0 in a disposable DSH 0.1.1-rc.2 Web Profile; the dump contained exactly one row before startup and zero after official uninstall."
+    "evidence": "2026-08-22 official rc.1 CLI installed local dsh-settings-hub@0.3.1 into a disposable Web Profile with one composed row and zero after uninstall. Fixed GitHub 0.3.0 had separately passed rc.2 fresh install and upgrade from 0.2.1."
   },
   "isolatedRuntime": {
     "verified": true,
-    "evidence": "2026-08-22 clean local dsh-settings-hub@0.3.0 cold-started in a disposable DSH 0.1.1-rc.2 Web Profile; icon preview/save, unified ordering, an internal page, the plugin-owned DSH Plugins Tab, the shell.overlay right-bottom panel and reload persistence were verified with zero browser errors."
+    "evidence": "2026-08-22 local dsh-settings-hub@0.3.1 cold-started on an exact rc.1 Client toolchain; Settings Hub, the plugin-owned Plugins Tab and shell.overlay launcher rendered with zero browser errors. The same functional Client had separately passed full rc.2 browser acceptance and fixed 0.3.0 GitHub start/hash checks."
   },
   "realProfile": {
     "verified": false,
@@ -13,6 +13,6 @@
   },
   "externalReadback": {
     "verified": false,
-    "evidence": "The prior 0.2.1 public source remains verified, but the current 0.3.0 Commit, tag, CI, Registry and marketplace have not yet been publicly read back."
+    "evidence": "Public GitHub 0.3.0 remains verified, but the current 0.3.1 rc.1 peer-range correction has not yet been merged, tagged or publicly read back. Registry and marketplace refresh remain unverified."
   }
 }
