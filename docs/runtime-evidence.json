@@ -12,7 +12,7 @@
     "evidence": "Real Profile was intentionally unchanged."
   },
   "externalReadback": {
-    "verified": false,
-    "evidence": "The prepared 0.2.1 source has not yet been published and read back from a fixed GitHub Commit. Registry and marketplace refresh remain unverified."
+    "verified": true,
+    "evidence": "2026-08-22 public GitHub Commit a91a65e939ca2435f1973eb17f8f33f1ee8a737d exposed dsh-settings-hub@0.2.1; public Bundle Patch and Client SHA-256 values matched locally, and GitHub CI passed on Ubuntu, macOS, and Windows. Registry and marketplace refresh remain unverified."
   }
 }
