@@ -15,10 +15,10 @@
 - Browser state: at most 12 custom pages, 128 page assignments, 128 location assignments, 256 order IDs, 64 favorites, and 128 icon assignments in 32 KiB of validated localStorage JSON; writes occur only after explicit save.
 - Additive public seats: unique plugin-owned `settings.section`, `settings.plugins.tab`, and `shell.overlay` entries; no replacement of shipped or third-party cells.
 - Compatibility target: DSH `0.1.1-rc.1` and `0.1.1-rc.2`, Web Profile.
-- Prepared package version: `0.3.1`; the current draft candidate remains pinned to public `0.3.0` until the compatibility revision has a fixed public Commit.
-- Immutable public source Commit: `5ca01345b3570fa23381eec032d439b0eef73679`; tag `v0.3.0`, public manifest/Bundle Patch/Client hashes, three-platform CI, fixed-source fresh install, fixed `0.2.1` to `0.3.0` upgrade, HTTP 200 and official uninstall were verified.
-- General audit: static `80/80`; local rc.1/rc.2 browser E3 and fixed-GitHub `0.3.0` rc.2 install/upgrade/start/uninstall passed; `0.3.1` fixed-source evidence remains pending and no real Profile claim is made.
-- Marketplace candidate: `marketplace/catalog-entry.draft.json`, pinned to the immutable `0.3.0` public source Commit.
+- Prepared package version: `0.3.1`.
+- Immutable public source Commit: `8f46230e26eafc8c8cd2c19528056e2fed8ee2b6`; tag `v0.3.1`, public manifest/Bundle Patch/Client hashes, three-platform CI, fixed-source rc.2 fresh install/HTTP 200/uninstall and local exact-rc.1 E3 were verified.
+- General audit: static `80/80`; local rc.1/rc.2 browser E3 and fixed-GitHub `0.3.1` rc.2 install/start/uninstall passed; no real Profile claim is made.
+- Marketplace candidate: `marketplace/catalog-entry.draft.json`, pinned to the immutable `0.3.1` public source Commit.
 - Marketplace audit: `direct`, no blocker; Registry CI/merge and public marketplace refresh remain unverified.
 - Disposable Profile E3: the functional Client passed on DSH `0.1.1-rc.2` for install/composition/start, icon preview/save, shared order, internal page, Plugins Tab, right-bottom overlay, reload persistence, zero browser errors and uninstall; local `0.3.1` additionally passed exact rc.1 install/start, Settings Hub, Plugins Tab, overlay launcher, zero browser errors and uninstall; see `docs/RUNTIME_EVIDENCE.md`.
 - Registry PR：未提交。

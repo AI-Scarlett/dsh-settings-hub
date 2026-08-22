@@ -6,8 +6,8 @@
   "repositoryUrl": "https://github.com/AI-Scarlett/dsh-settings-hub",
   "defaultBranch": "main",
   "manifestPath": "package.json",
-  "commit": "5ca01345b3570fa23381eec032d439b0eef73679",
-  "version": "0.3.0",
+  "commit": "8f46230e26eafc8c8cd2c19528056e2fed8ee2b6",
+  "version": "0.3.1",
   "categories": [
     "ui",
     "management"
@@ -17,13 +17,13 @@
     "discovery": {
       "status": "verified",
       "method": "github-fixed-source-commit",
-      "checkedAt": "2026-08-22T15:12:22.000Z",
-      "evidenceUrl": "https://github.com/AI-Scarlett/dsh-settings-hub/commit/5ca01345b3570fa23381eec032d439b0eef73679",
-      "summary": "公开固定提交的 manifest、Bundle Patch 与 Client 哈希匹配，v0.3.0 标签解析正确，且三平台 CI 通过。"
+      "checkedAt": "2026-08-22T15:33:01.000Z",
+      "evidenceUrl": "https://github.com/AI-Scarlett/dsh-settings-hub/commit/8f46230e26eafc8c8cd2c19528056e2fed8ee2b6",
+      "summary": "公开固定提交的 manifest、Bundle Patch 与 Client 哈希匹配，v0.3.1 标签解析正确，且三平台 CI 通过。"
     },
     "installability": {
       "status": "unknown",
-      "summary": "0.3.0 已在 rc.2 一次性 Profile 中完成固定 GitHub 新装、从 0.2.1 升级、配置合成、冷启动和卸载；尚无独立公开运行证据。"
+      "summary": "0.3.1 已在 rc.2 一次性 Profile 中完成固定 GitHub 新装、配置合成、冷启动和卸载；同一 Client 也通过本地 rc.1 E3；尚无独立公开运行证据。"
     },
     "runtime": {
       "status": "unknown",
@@ -116,9 +116,9 @@
     "review": "owner-curated-not-security-audited"
   },
   "source": {
-    "updatedAt": "2026-08-22T15:06:05.000Z",
+    "updatedAt": "2026-08-22T15:28:40.000Z",
     "provenance": "github-commit",
-    "observedAt": "2026-08-22T15:12:22.000Z"
+    "observedAt": "2026-08-22T15:33:01.000Z"
   },
   "searchTerms": [
     "DSH 设置导航中心",
