@@ -54,16 +54,16 @@ npm pack --dry-run --json
 
 ## 安装与发布状态
 
-准备发布版本为 `0.3.1`，用于把 Client peer 下限恢复为已经验证过的 rc.1；当前公开版本仍为 `0.3.0`。在 `0.3.1` 固定 Commit 回读完成前，可复核的公开来源为：
+当前插件版本为 `0.3.1`。通过 GitHub 安装时建议固定已经公开回读的完整 40 位 Commit：
 
 ```text
-github:AI-Scarlett/dsh-settings-hub#5ca01345b3570fa23381eec032d439b0eef73679
+github:AI-Scarlett/dsh-settings-hub#8f46230e26eafc8c8cd2c19528056e2fed8ee2b6
 ```
 
-- `0.3.0` 源码：14 项功能/契约测试、静态审计、一次性 Profile E3 与 GitHub 三平台 CI 已通过；
-- GitHub 固定源码：`5ca01345b3570fa23381eec032d439b0eef73679` 的 manifest、Bundle Patch 与 Client 已公开回读且 SHA-256 匹配；
-- GitHub 标签：`v0.3.0` 解析到上述源码 Commit；
-- GitHub 固定安装与升级：官方 CLI 已在一次性 rc.2 Profile 中验证 `0.2.1 → 0.3.0`、单行合成、HTTP 200 与卸载回零；
+- `0.3.1` 源码：14 项功能/契约测试、静态审计、rc.1/rc.2 一次性 Profile E3 与 GitHub 三平台 CI 已通过；
+- GitHub 固定源码：`8f46230e26eafc8c8cd2c19528056e2fed8ee2b6` 的 manifest、Bundle Patch 与 Client 已公开回读且 SHA-256 匹配；
+- GitHub 标签：`v0.3.1` 解析到上述源码 Commit；
+- GitHub 固定安装与升级：官方 CLI 已验证固定 `0.3.1` 在 rc.2 单行合成、HTTP 200 与卸载回零；固定 `0.2.1 → 0.3.0` 升级和本地 `0.3.1` rc.1 浏览器 E3 也已通过；
 - DSH STORE：当前公开目录仍可能显示旧版本；目录合并和公开页面回读属于独立发布门；
 - 真实 Profile：未安装。
 

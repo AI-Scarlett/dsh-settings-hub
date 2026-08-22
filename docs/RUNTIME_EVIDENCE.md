@@ -10,6 +10,14 @@
 - Cleanup: official rc.1 CLI removal succeeded, a fresh dump contained zero rows, and the disposable toolchain/Profile were moved to Trash for recoverability.
 - Scope: this is local rc.1 E3 evidence. The `0.3.1` GitHub Commit/tag/CI, fixed-GitHub install and marketplace publication remain separate gates.
 
+### Fixed 0.3.1 public source follow-up
+
+- GitHub PR `#2` merged as `8f46230e26eafc8c8cd2c19528056e2fed8ee2b6`; tag `v0.3.1` peels to that Commit.
+- The public `package.json`, `cordis.patch.yml`, and `lib/client.js` SHA-256 values matched the merged local Commit exactly; main-branch CI run `32581810491` passed on Ubuntu, macOS, and Windows.
+- A new disposable rc.2 Web Profile installed the exact `0.3.1` GitHub source, resolved version `0.3.1`, composed one row, cold-started with HTTP 200, and served a Client hash matching the public source.
+- Official uninstall succeeded, a fresh dump contained zero rows, and the temporary Profile was moved to Trash for recoverability.
+- Registry/catalog merge, public marketplace visibility and real Profile installation remain separate gates.
+
 ## 2026-08-22 multi-location layout source iteration
 
 - Runtime identity: global official CLI reported `0.1.1-rc.2`.
