@@ -13,6 +13,7 @@
 - Browser error log: zero errors.
 - Cleanup: the server stopped; official `dsh plugin --profile web remove dsh-settings-hub` completed; a fresh dump contained zero plugin rows; the disposable home was deleted.
 - Public source readback: GitHub Commit `a91a65e939ca2435f1973eb17f8f33f1ee8a737d` exposed `dsh-settings-hub@0.2.1`; its public Bundle Patch and Client SHA-256 values matched the local Commit exactly, and GitHub CI passed on Ubuntu, macOS, and Windows.
+- Fixed-GitHub install recheck: a second fresh disposable home installed the exact source `github:AI-Scarlett/dsh-settings-hub#a91a65e939ca2435f1973eb17f8f33f1ee8a737d` through the official CLI, composed one row, cold-started with HTTP 200, removed cleanly, and composed zero rows afterward.
 - Scope: E3 and fixed GitHub source are current for `0.2.1`. Registry update, refreshed marketplace page, and real Profile installation remain separate gates.
 
 Observed on 2026-08-21 in two new `/tmp` homes. No command used the real DSH
