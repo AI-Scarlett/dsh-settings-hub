@@ -54,14 +54,16 @@ npm pack --dry-run --json
 
 ## 安装与发布状态
 
-准备发布版本为 `0.3.0`。发布完成后应通过 DSH STORE 或固定 `v0.3.0` 对应的完整 40 位 Commit 安装；在固定 Commit 尚未写入本节前，不应把工作树测试当成公开发布：
+准备发布版本为 `0.3.1`，用于把 Client peer 下限恢复为已经验证过的 rc.1；当前公开版本仍为 `0.3.0`。在 `0.3.1` 固定 Commit 回读完成前，可复核的公开来源为：
 
 ```text
-github:AI-Scarlett/dsh-settings-hub#<v0.3.0-full-commit>
+github:AI-Scarlett/dsh-settings-hub#5ca01345b3570fa23381eec032d439b0eef73679
 ```
 
-- `0.3.0` 本地源码：功能和契约测试进行中；
-- GitHub 固定源码与标签：尚未发布；
+- `0.3.0` 源码：14 项功能/契约测试、静态审计、一次性 Profile E3 与 GitHub 三平台 CI 已通过；
+- GitHub 固定源码：`5ca01345b3570fa23381eec032d439b0eef73679` 的 manifest、Bundle Patch 与 Client 已公开回读且 SHA-256 匹配；
+- GitHub 标签：`v0.3.0` 解析到上述源码 Commit；
+- GitHub 固定安装与升级：官方 CLI 已在一次性 rc.2 Profile 中验证 `0.2.1 → 0.3.0`、单行合成、HTTP 200 与卸载回零；
 - DSH STORE：当前公开目录仍可能显示旧版本；目录合并和公开页面回读属于独立发布门；
 - 真实 Profile：未安装。
 
