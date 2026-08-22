@@ -4,7 +4,7 @@
 
 - Runtime identity: global official CLI reported `0.1.1-rc.2`.
 - Isolation: a new `/tmp/dsh-settings-hub-theme-e3.*` home was created; the real DSH home and Profile were not read or changed.
-- Release identity recheck: after setting the manifest to `dsh-settings-hub@0.2.0`, a fresh disposable home accepted the package through the official CLI, composed exactly one row, returned HTTP 200 after cold start, removed the package through the official CLI, and composed zero rows afterward.
+- Release identity recheck: after setting the manifest to `dsh-settings-hub@0.2.1`, a fresh disposable home accepted the package through the official CLI, composed exactly one row, returned HTTP 200 after cold start, removed the package through the official CLI, and composed zero rows afterward.
 - Install and composition: official `dsh plugin --profile web add <working-tree>` completed; `dsh --profile web --dump-config` contained exactly one `dsh-settings-hub` row.
 - Startup: `dsh web --no-open --port 0` served the disposable Profile on loopback.
 - Theme acceptance: the real DSH appearance control was switched between light and dark. Settings Hub computed primary/secondary text as `rgb(15, 17, 21)` / `rgb(97, 102, 107)` in light mode and `rgb(249, 250, 251)` / `rgb(207, 211, 214)` in dark mode; heading/body sizes were `22px` / `14px`.
@@ -12,8 +12,7 @@
 - Removal acceptance: assigning `插件配置` back to `Tab：默认分组` removed it from the custom Tab and showed the empty-Tab guidance.
 - Browser error log: zero errors.
 - Cleanup: the server stopped; official `dsh plugin --profile web remove dsh-settings-hub` completed; a fresh dump contained zero plugin rows; the disposable home was deleted.
-- Public source readback: GitHub Commit `2771a315d4c438b89b8323635038642ab03cabf3` exposed `dsh-settings-hub@0.2.0`; the public Bundle Patch and Client SHA-256 values matched the local Commit exactly.
-- Scope: E3 is current for the `0.2.0` release source and its fixed GitHub source surface is verified. This does not prove a Registry update, refreshed marketplace page, or real Profile installation.
+- Scope: E3 is current for the `0.2.1` source prepared for repository release. Its new fixed GitHub source, Registry update, refreshed marketplace page, and real Profile installation remain separate gates.
 
 Observed on 2026-08-21 in two new `/tmp` homes. No command used the real DSH
 home, no API key was entered, telemetry was disabled, and both temporary Web

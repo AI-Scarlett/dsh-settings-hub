@@ -7,7 +7,7 @@ const root = new URL('../', import.meta.url)
 test('package is a canonical, self-contained DSH Bundle', async () => {
   const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'))
   assert.equal(manifest.name, 'dsh-settings-hub')
-  assert.equal(manifest.version, '0.2.0')
+  assert.equal(manifest.version, '0.2.1')
   assert.equal(manifest.license, 'MIT')
   assert.equal(manifest.repository.url, 'git+https://github.com/AI-Scarlett/dsh-settings-hub.git')
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
@@ -27,7 +27,7 @@ test('package is a canonical, self-contained DSH Bundle', async () => {
 })
 
 test('Bundle Patch adds one unique plugin-owned row', async () => {
-  const patch = await readFile(new URL('cordis.patch.yml', root), 'utf8')
+  const patch = (await readFile(new URL('cordis.patch.yml', root), 'utf8')).replace(/\r\n/g, '\n')
   assert.match(patch, /^- insert:\n\s+- id: dsh-settings-hub\n\s+name: dsh-settings-hub\n\s*$/)
   assert.doesNotMatch(patch, /disabled:\s*true|ui-settings-plugin-inventory|@deepseek-ai\//)
 })

@@ -1,18 +1,18 @@
 {
   "dumpConfig": {
     "verified": true,
-    "evidence": "2026-08-22 official CLI installed dsh-settings-hub@0.2.0 into a fresh disposable DSH 0.1.1-rc.2 Web Profile; dump contained exactly one dsh-settings-hub row before startup and zero rows after official-CLI uninstall."
+    "evidence": "2026-08-22 official CLI installed dsh-settings-hub@0.2.1 into a fresh disposable DSH 0.1.1-rc.2 Web Profile; dump contained exactly one dsh-settings-hub row before startup and zero rows after official-CLI uninstall."
   },
   "isolatedRuntime": {
     "verified": true,
-    "evidence": "2026-08-22 dsh-settings-hub@0.2.0 cold-started in a disposable DSH 0.1.1-rc.2 Web Profile and returned HTTP 200; the matching source had real light/dark switching, explicit edit/save, custom Tab assignment and removal, icon/favorite persistence after dialog reopen, and zero browser errors observed."
+    "evidence": "2026-08-22 dsh-settings-hub@0.2.1 cold-started in a disposable DSH 0.1.1-rc.2 Web Profile and returned HTTP 200; the matching runtime source had real light/dark switching, explicit edit/save, custom Tab assignment and removal, icon/favorite persistence after dialog reopen, and zero browser errors observed."
   },
   "realProfile": {
     "verified": false,
     "evidence": "Real Profile was intentionally unchanged."
   },
   "externalReadback": {
-    "verified": true,
-    "evidence": "2026-08-22 public GitHub Commit 2771a315d4c438b89b8323635038642ab03cabf3 exposed dsh-settings-hub@0.2.0; public Bundle Patch and Client SHA-256 values matched the local Commit. Registry and marketplace refresh remain unverified."
+    "verified": false,
+    "evidence": "The prepared 0.2.1 source has not yet been published and read back from a fixed GitHub Commit. Registry and marketplace refresh remain unverified."
   }
 }
