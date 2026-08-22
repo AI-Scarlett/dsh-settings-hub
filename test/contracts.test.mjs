@@ -7,7 +7,7 @@ const root = new URL('../', import.meta.url)
 test('package is a canonical, self-contained DSH Bundle', async () => {
   const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'))
   assert.equal(manifest.name, 'dsh-settings-hub')
-  assert.equal(manifest.version, '0.1.0')
+  assert.equal(manifest.version, '0.2.0')
   assert.equal(manifest.license, 'MIT')
   assert.equal(manifest.repository.url, 'git+https://github.com/AI-Scarlett/dsh-settings-hub.git')
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
@@ -46,9 +46,20 @@ test('Host remains a no-op and Browser stays on public Client seams', async () =
   assert.match(client, /dsh-settings-hub:preferences:v1/)
   assert.match(client, /MAX_FAVORITES = 64/)
   assert.match(client, /MAX_ICON_ASSIGNMENTS = 128/)
+  assert.match(client, /MAX_CUSTOM_TABS = 12/)
+  assert.match(client, /MAX_TAB_ASSIGNMENTS = 128/)
   assert.match(client, /MAX_STORAGE_BYTES = 32 \* 1024/)
   assert.match(client, /stroke: "currentColor"/)
   assert.match(client, /fill: "none"/)
+  for (const token of [
+    '--dsw-alias-label-primary', '--dsw-alias-label-secondary', '--dsw-alias-bg-layer-1',
+    '--dsw-alias-bg-layer-2', '--dsw-alias-border-l2', '--dsw-alias-border-l3',
+    '--dsw-alias-state-business-primary', '--dsw-alias-state-business-tertiary',
+  ]) assert.match(client, new RegExp(token))
+  for (const obsoleteToken of [
+    '--dsw-alias-label-secondary-foreground', '--dsw-alias-label-tertiary-foreground', '--dsw-alias-border-secondary',
+    '--dsw-alias-surface-primary', '--dsw-alias-surface-secondary', '--dsw-alias-state-info-primary',
+  ]) assert.doesNotMatch(client, new RegExp(obsoleteToken))
   assert.match(client, /"aria-label": "设置 " \+ item\.label \+ " 图标"/)
   assert.match(client, /document\.querySelector\('\[role="dialog"\]\[aria-modal="true"\]'\)/)
   for (const forbidden of [
@@ -69,5 +80,6 @@ test('documentation keeps evidence and publication states separate', async () =>
   assert.match(readme, /真实 Profile：未安装/)
   assert.match(security, /No network access/)
   assert.match(readiness, /Registry PR：未提交/)
-  assert.match(readiness, /公开商城：未上架/)
+  assert.match(readiness, /Existing merged catalog identity: approved `0\.1\.0`/)
+  assert.match(readiness, /Public marketplace: existing listing remains a separate readback surface/)
 })

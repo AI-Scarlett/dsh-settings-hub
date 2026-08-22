@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings Hub theme fixture</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #eef0f3;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .preview-stack { display: grid; gap: 28px; max-width: 1040px; margin: 0 auto; }
+    .preview {
+      overflow: hidden;
+      border: 1px solid var(--dsw-alias-border-l2);
+      border-radius: 18px;
+      color: var(--dsw-alias-label-primary);
+      background: var(--dsw-alias-bg-layer-1);
+      box-shadow: 0 14px 40px rgb(15 17 21 / 12%);
+    }
+    .preview-label {
+      margin: 0;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--dsw-alias-border-l2);
+      color: var(--dsw-alias-label-secondary);
+      background: var(--dsw-alias-bg-layer-2);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .preview-content { padding: 28px 32px; }
+    .preview[data-theme="light"] {
+      --dsw-alias-label-primary: #0f1115;
+      --dsw-alias-label-secondary: #61666b;
+      --dsw-alias-bg-layer-1: #ffffff;
+      --dsw-alias-bg-layer-2: #ffffff;
+      --dsw-alias-border-l2: #0000001a;
+      --dsw-alias-border-l3: #0000001f;
+      --dsw-alias-state-business-primary: #4176e6;
+      --dsw-alias-state-business-tertiary: #e4edfd;
+      color-scheme: light;
+    }
+    .preview[data-theme="dark"] {
+      --dsw-alias-label-primary: #f9fafb;
+      --dsw-alias-label-secondary: #cfd3d6;
+      --dsw-alias-bg-layer-1: #232324;
+      --dsw-alias-bg-layer-2: #2c2c2e;
+      --dsw-alias-border-l2: #ffffff1f;
+      --dsw-alias-border-l3: #ffffff29;
+      --dsw-alias-state-business-primary: #679efe;
+      --dsw-alias-state-business-tertiary: #34415b;
+      color-scheme: dark;
+    }
+  </style>
+</head>
+<body>
+  <main class="preview-stack" aria-label="Settings Hub 深浅主题验收夹具">
+    <section class="preview" data-theme="light">
+      <p class="preview-label">浅色模式 · DSH 0.1.1-rc.2 主题变量</p>
+      <div class="preview-content" data-mount="light"></div>
+    </section>
+    <section class="preview" data-theme="dark">
+      <p class="preview-label">深色模式 · DSH 0.1.1-rc.2 主题变量</p>
+      <div class="preview-content" data-mount="dark"></div>
+    </section>
+  </main>
+  <script>
+    window.__fixtureDefinition = null;
+    window.__ModuleLoader__ = { load: function (definition) { window.__fixtureDefinition = definition; } };
+  </script>
+  <script src="/lib/client.js"></script>
+  <script>
+    function createReact() {
+      var states = [];
+      var cursor = 0;
+      return {
+        beginRender: function () { cursor = 0; },
+        createElement: function (type, props) {
+          var children = Array.prototype.slice.call(arguments, 2).flat(Infinity);
+          return { type: type, props: props || {}, children: children };
+        },
+        useCallback: function (fn) { return fn; },
+        useMemo: function (fn) { return fn(); },
+        useState: function (initial) {
+          var index = cursor;
+          cursor += 1;
+          if (!(index in states)) states[index] = typeof initial === "function" ? initial() : initial;
+          return [states[index], function (next) { states[index] = typeof next === "function" ? next(states[index]) : next; }];
+        },
+        useSyncExternalStore: function (subscribe, snapshot) { subscribe(function () {}); return snapshot(); },
+      };
+    }
+
+    function entry(id, label, order, registrant) {
+      return { registrant: registrant || "fixture", options: { id: id, label: label, order: order } };
+    }
+
+    function renderNode(node, rerender) {
+      if (node == null || typeof node === "boolean") return document.createTextNode("");
+      if (Array.isArray(node)) {
+        var fragment = document.createDocumentFragment();
+        node.forEach(function (child) { fragment.appendChild(renderNode(child, rerender)); });
+        return fragment;
+      }
+      if (typeof node !== "object") return document.createTextNode(String(node));
+      var svgTags = new Set(["svg", "path", "circle", "rect", "line"]);
+      var element = svgTags.has(node.type)
+        ? document.createElementNS("http://www.w3.org/2000/svg", node.type)
+        : document.createElement(node.type);
+      Object.entries(node.props || {}).forEach(function (pair) {
+        var key = pair[0];
+        var value = pair[1];
+        if (key === "style") Object.assign(element.style, value);
+        else if (key === "children" || key === "key") return;
+        else if (key.startsWith("on") && typeof value === "function") {
+          var eventName = key === "onChange" && (node.type === "input" || node.type === "textarea") ? "input" : key.slice(2).toLowerCase();
+          element.addEventListener(eventName, function (event) {
+            value(event);
+            rerender();
+          });
+        }
+        else if (key === "htmlFor") element.htmlFor = value;
+        else if (key === "className") element.className = value;
+        else if (key === "value") element.value = value;
+        else if (value === true) element.setAttribute(key, "");
+        else if (value !== false && value != null) {
+          var svgAttribute = { strokeWidth: "stroke-width", strokeLinecap: "stroke-linecap", strokeLinejoin: "stroke-linejoin" }[key] || key;
+          element.setAttribute(svgAttribute, String(value));
+        }
+      });
+      (node.children || []).forEach(function (child) { element.appendChild(renderNode(child, rerender)); });
+      return element;
+    }
+
+    function mountFixture(target) {
+      var React = createReact();
+      var plugin = window.__fixtureDefinition.factory(function (name) {
+        if (name !== "react") throw new Error("Unexpected module: " + name);
+        return React;
+      });
+      var sections = [
+        entry("general", "通用设置", 0, "@deepseek-ai/general"),
+        entry("models", "模型与授权", 10, "@deepseek-ai/models"),
+        entry("plugins", "插件", 20, "@deepseek-ai/plugins"),
+        entry("notifications", "通知", 30, "@deepseek-ai/notifications"),
+      ];
+      var tabs = [
+        entry("dsh-cliapi", "模型与授权", 10, "@local/dsh-cliapi"),
+        entry("dsh-token-monitor", "用量统计", 20, "dsh-token-monitor"),
+        entry("dsh-pet-settings", "宠物伙伴", 30, "dsh-pet-settings"),
+        entry("better-sidebar", "侧边对应", 40, "better-sidebar"),
+      ];
+      var registration;
+      var ctx = {
+        slots: {
+          inject: function (_key, callback) { return callback(); },
+          register: function (options, component) { registration = { options: options, component: component }; return function () {}; },
+          entriesOfSlot: function (key) { return key === "settings.section" ? sections : tabs; },
+          entries: function (key) { return this.entriesOfSlot(key); },
+          getVersion: function () { return 1; },
+          subscribe: function () { return function () {}; },
+        },
+      };
+      plugin.apply(ctx);
+      function render() {
+        React.beginRender();
+        target.replaceChildren(renderNode(registration.component({ close: function () {} }), render));
+      }
+      render();
+    }
+
+    document.querySelectorAll("[data-mount]").forEach(mountFixture);
+  </script>
+</body>
+</html>

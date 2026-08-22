@@ -6,7 +6,7 @@
 - Target host: DeepSeek Harness Web `0.1.1-rc.1` and `0.1.1-rc.2`.
 - Public seams: `window.__ModuleLoader__.load`, `settings.section`, `settings.plugins.tab`, `ctx.slots.entriesOfSlot`, `ctx.slots.subscribe`.
 - Bundle route: direct, repository root.
-- Risk: R1 because favorites are plugin-owned persistent browser state.
+- Risk: R1 because custom tabs, assignments, favorites, and icons are plugin-owned persistent browser state.
 - Evidence target: E3 disposable; real Profile remains a separate E4 gate.
 
 ## Decision: additive hub instead of navigation replacement
@@ -48,12 +48,25 @@
 | Evidence | Unit tests validate palette rendering, bounded persistence, and rejection of unknown IDs. |
 | Reconsider when | DSH publishes an official settings icon field or customization service. |
 
+## Decision: saved custom tabs inside Settings Hub
+
+| Field | Decision |
+| --- | --- |
+| Objective | Let users explicitly organize plugin and settings pages into named tabs, with understandable save/cancel behavior. |
+| Rationale | DSH rc.1/rc.2 exposes read-only slot metadata but no public API for adding, removing, or reordering official settings navigation. |
+| Chosen option | Provide an edit mode for plugin-owned custom tabs, item assignments, favorites, and icons; persist only after an explicit save. |
+| Benefit | Users can organize the hub without risking official navigation or Profile state. |
+| Cost | Custom tabs appear only inside Settings Hub and do not alter the official sidebar. |
+| Failure | Invalid or oversized stored state is discarded; deleting a custom tab returns its assignments to default grouping. |
+| Evidence | Unit tests cover explicit save, custom-tab assignment, filtering, removal, and bounded normalization. |
+| Reconsider when | DSH publishes a supported settings-navigation customization service. |
+
 ## Permission matrix
 
 | Action/data | Owner | Limit | Failure behavior | Test |
 | --- | --- | --- | --- | --- |
 | Read slot entry IDs, labels, order and registrant | Client | Current `settings.section` and `settings.plugins.tab` only | Empty list | Client fixture |
-| Store favorite IDs and icon choices | Client localStorage | 64 favorites, 128 assignments, 32 KiB, built-in icon IDs only | Empty in-memory preferences and automatic icons | Malformed/oversized storage test |
+| Store custom tabs, item assignments, favorite IDs and icon choices | Client localStorage | 12 tabs, 128 tab assignments, 64 favorites, 128 icon assignments, 32 KiB | Empty in-memory preferences and automatic grouping/icons | Save, assignment, removal, malformed/oversized tests |
 | Render line icons | Client React tree | 14 embedded SVG definitions, decorative only | Generic grid icon | Palette rendering test |
 | Activate an existing settings control | Client/user click | Current modal, exact visible label | No click; status message | Exact-control activation test |
 

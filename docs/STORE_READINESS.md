@@ -12,16 +12,16 @@
 - Lifecycle scripts: none.
 - External dependencies: none beyond declared DSH Client peer packages and React.
 - Icon assets: 14 embedded line SVG definitions; no remote fonts, images, stylesheets, or scripts.
-- Browser state: at most 64 favorites and 128 icon assignments in 32 KiB of validated localStorage JSON.
+- Browser state: at most 12 custom tabs, 128 tab assignments, 64 favorites, and 128 icon assignments in 32 KiB of validated localStorage JSON; writes occur only after explicit save.
 - Compatibility target: DSH `0.1.1-rc.1` and `0.1.1-rc.2`, Web Profile.
-- Current immutable local source Commit: `5a19faa0d1b6c94e8192c076de471a982c8a312c`.
-- Immutable public Commit: unavailable until the same object is published and read back from GitHub.
-- General audit: static `77/80`, no blocker before the immutable source commit; runtime evidence `10/20`.
-- Marketplace candidate: `marketplace/catalog-entry.draft.json`, pinned to the immutable local source Commit.
+- Prepared package version: `0.2.0`.
+- Immutable public Commit: unavailable until the source release commit is published and read back from GitHub.
+- General audit: rerun before the source release and again against its immutable public Commit.
+- Marketplace candidate: intentionally deferred until the source release Commit exists; never pin an uncommitted future SHA.
 - Disposable Profile E3: passed on DSH `0.1.1-rc.1` and `0.1.1-rc.2`; see `docs/RUNTIME_EVIDENCE.md`.
 - Registry PR：未提交。
-- Merged catalog: not merged.
-- 公开商城：未上架。
+- Existing merged catalog identity: approved `0.1.0`; a source update does not by itself rewrite that Registry entry.
+- Public marketplace: existing listing remains a separate readback surface.
 - Real Profile: unchanged.
 
-The local source and draft catalog candidate are preparation artifacts only. They do not prove a GitHub release, Registry merge, marketplace visibility, or Profile installation.
+The prepared source and E3 evidence do not prove a GitHub release, Registry update, marketplace visibility, or Profile installation. A fixed-source candidate may be generated only after the public source Commit exists.
