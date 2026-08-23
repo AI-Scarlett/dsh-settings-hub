@@ -54,15 +54,15 @@ npm pack --dry-run --json
 
 ## 安装与发布状态
 
-当前插件版本为 `0.3.1`。通过 GitHub 安装时建议固定已经公开回读的完整 40 位 Commit：
+当前插件版本为 `0.3.2`。通过 GitHub 安装时建议固定已经公开回读的完整 40 位 Commit：
 
 ```text
-github:AI-Scarlett/dsh-settings-hub#8f46230e26eafc8c8cd2c19528056e2fed8ee2b6
+github:AI-Scarlett/dsh-settings-hub#08934e84e8f661ebc5021e1cd8b7b0e4086feb57
 ```
 
-- `0.3.1` 源码：14 项功能/契约测试、静态审计、rc.1/rc.2 一次性 Profile E3 与 GitHub 三平台 CI 已通过；
-- GitHub 固定源码：`8f46230e26eafc8c8cd2c19528056e2fed8ee2b6` 的 manifest、Bundle Patch 与 Client 已公开回读且 SHA-256 匹配；
-- GitHub 标签：`v0.3.1` 解析到上述源码 Commit；
+- `0.3.2` 源码：在 `0.3.1` 的测试基础上，明确展示 Settings Hub 自有入口的生效范围，避免把官方侧边栏/第三方 Tab 的不可变行为误认为保存失败；
+- GitHub 固定源码：`08934e84e8f661ebc5021e1cd8b7b0e4086feb57` 的 manifest、Bundle Patch 与 Client 已公开回读且 SHA-256 匹配；
+- GitHub 标签：`v0.3.2` 解析到上述源码 Commit；
 - GitHub 固定安装与升级：官方 CLI 已验证固定 `0.3.1` 在 rc.2 单行合成、HTTP 200 与卸载回零；固定 `0.2.1 → 0.3.0` 升级和本地 `0.3.1` rc.1 浏览器 E3 也已通过；
 - DSH STORE：当前公开目录仍可能显示旧版本；目录合并和公开页面回读属于独立发布门；
 - 真实 Profile：未安装。
