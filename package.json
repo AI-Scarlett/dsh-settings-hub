@@ -1,6 +1,6 @@
 {
   "name": "dsh-settings-hub",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A safe, searchable and configurable settings shortcut hub for DeepSeek Harness.",
   "license": "MIT",
   "type": "module",
