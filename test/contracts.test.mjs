@@ -7,12 +7,11 @@ const root = new URL('../', import.meta.url)
 test('package is a canonical, self-contained DSH Bundle', async () => {
   const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'))
   assert.equal(manifest.name, 'dsh-settings-hub')
-  assert.equal(manifest.version, '0.3.2')
+  assert.equal(manifest.version, '0.3.3')
   assert.equal(manifest.license, 'MIT')
   assert.equal(manifest.repository.url, 'git+https://github.com/AI-Scarlett/dsh-settings-hub.git')
   assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
   assert.deepEqual(manifest.dsh.client.inject, [
-    '@deepseek-ai/dsh-client-runtime',
     '@deepseek-ai/dsh-client-ui-slots',
     '@deepseek-ai/dsh-client-ui-settings',
   ])
