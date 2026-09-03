@@ -37,11 +37,11 @@ DSH Settings Hub 是一个独立的 DeepSeek Harness Web 插件，为当前已�
 
 ## 兼容目标
 
-- DSH `0.1.1-rc.1` 与 `0.1.1-rc.2`；
+- DSH `0.1.2-rc.1`（兼容范围 `>=0.1.2-rc.1 <0.2.0`）；
 - Web Profile；
 - Node.js `>=22.13.0`。
 
-`0.2.1` 已在 rc.1 与 rc.2 通过一次性 Profile 验证；`0.3.0` 的 rc.2 验证将在发布前更新到 [docs/RUNTIME_EVIDENCE.md](docs/RUNTIME_EVIDENCE.md)。
+`0.3.3` 以官方 `0.1.2-rc.1` 的公开 Client slots 契约为适配目标；一次性 Profile 与商城公开回读证据仍由 DSH STORE 独立记录。
 
 ## 开发检查
 
