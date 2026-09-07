@@ -1,6 +1,6 @@
 {
   "name": "dsh-settings-hub",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A safe, searchable and configurable settings shortcut hub for DeepSeek Harness.",
   "license": "MIT",
   "type": "module",
@@ -30,15 +30,16 @@
       ]
     },
     "compatibility": {
-      "dsh": ">=0.1.2-rc.1 <0.2.0",
+      "dsh": ">=0.1.2-rc.1 <0.2.0 || 0.1.3-alpha.1",
       "dshReleases": {
-        "0.1.2-rc.1": "compatible"
+        "0.1.2-rc.1": "compatible",
+        "0.1.3-alpha.1": "compatible"
       }
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-client-ui-settings": ">=0.1.2-rc.1 <0.2.0",
-    "@deepseek-ai/dsh-client-ui-slots": ">=0.1.2-rc.1 <0.2.0",
+    "@deepseek-ai/dsh-client-ui-settings": ">=0.1.2-rc.1 <0.2.0 || 0.1.3-alpha.1",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.1.2-rc.1 <0.2.0 || 0.1.3-alpha.1",
     "react": ">=18.2.0"
   },
   "engines": {
